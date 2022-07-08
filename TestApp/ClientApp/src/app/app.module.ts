@@ -15,6 +15,8 @@ import { AwsComponent } from './aws/aws.component';
 
 
 
+import { Ec2instanceService } from './services/ec2instance.service';
+
 @NgModule({
 
 
@@ -38,8 +40,15 @@ import { AwsComponent } from './aws/aws.component';
     ])
   ],
 
+
 providers: [
+   { provide: 'BASE_URL', useFactory: getBaseUrl },
+   Ec2instanceService,
     ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function getBaseUrl() {
+  return document.getElementsByTagName('base')[0].href;
+}

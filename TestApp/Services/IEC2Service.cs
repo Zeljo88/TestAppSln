@@ -13,5 +13,9 @@ namespace TestApp.Services
         Task<EC2Response> TerminateInstanceAsync(string instanceId);
 
         Task<List<EC2Instance>> GetAllInstancesAsync();
+
+        Task<InstanceState> StartInstanceAsync(string instanceId);
+
+        Task<InstanceState> StopInstanceAsync(string instanceId);
     }
 }

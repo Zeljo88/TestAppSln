@@ -18,7 +18,7 @@ namespace TestApp.Extensions
                 instance.InstanceId = x.InstanceId;
                 instance.Name = x.Tags[0].Value;
                 instance.State = x.State.Name;
-                //instance.InstanceType = x.InstanceType;
+                instance.InstanceType = x.InstanceType.Value;
             }
             return instance;
         }

@@ -30,7 +30,13 @@ namespace TestApp
          
             services.AddSingleton<IEC2Service, EC2Service>();
             services.AddSingleton<IEC2Service, EC2Service>();
+
+
             services.AddAWSService<IAmazonEC2>();
+
+
+            services.AddCors();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -63,7 +69,11 @@ namespace TestApp
                 c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "MY API V1");
             });
 
-            app.UseHttpsRedirection();
+            app.UseCors(builder => builder
+                  .AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader());
+
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
@@ -78,6 +88,7 @@ namespace TestApp
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
+                      
 
             app.UseSpa(spa =>
             {
@@ -91,6 +102,9 @@ namespace TestApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+            
+
+            app.UseHttpsRedirection();
         }
     }
 }

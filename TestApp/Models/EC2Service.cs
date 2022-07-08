@@ -127,7 +127,20 @@ namespace TestApp.Models
                        select reservation.Instances.ToInstance()).ToList();           
 
             return inst;
-        }        
+        }
 
+        public async Task<InstanceState> StartInstanceAsync(string instanceId)
+        {
+            var response = await _client.StartInstancesAsync(new StartInstancesRequest(new List<string> { instanceId }));
+
+            return response.StartingInstances[0].CurrentState;
+        }
+
+        public async Task<InstanceState> StopInstanceAsync(string instanceId)
+        {
+            var response = await _client.StopInstancesAsync(new StopInstancesRequest(new List<string> { instanceId }));
+
+            return response.StoppingInstances[0].CurrentState;
+        }
     }
 }

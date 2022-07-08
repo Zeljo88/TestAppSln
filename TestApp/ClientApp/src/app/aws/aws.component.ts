@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Ec2instanceService } from '../services/ec2instance.service';
+import { HttpClient } from '@angular/common/http';
+import { Ec2instance } from '../models/ec2instance';
+import { ErrorService } from '../services/error.service';
 
 export interface PeriodicElement {
   name: string;
@@ -23,9 +27,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
 selector: 'aws-component',
 templateUrl: './aws.component.html',
-styleUrls: ['./aws.component.css']
+styleUrls: ['./aws.component.css'],
+providers: [
+  Ec2instanceService,
+  ErrorService
+]
 })
 export class AwsComponent {
+
+
+  public instances: Ec2instance[];
+  constructor(
+    http: HttpClient,
+    public ec2Service : Ec2instanceService,
+    @Inject('BASE_URL')
+    baseUrl: string
+    ) {
+    http.get<Ec2instance[]>('https://localhost:44334/instances').subscribe(result => {
+      this.instances = result;
+    }, error => console.error(error));
+  }
 
   columns = [
     {
@@ -55,6 +76,20 @@ export class AwsComponent {
 
   public CreateInstance() {
 
+  }
+
+  public confirmStartVM(id: string) {
+    this.ec2Service.StartInstance(id).subscribe(result => {
+      this.instances = result;
+    }, error => console.error(error))
+    window.location.reload();
+  }
+
+  public confirmStopVM(id: string) {
+    this.ec2Service.StopInstance(id).subscribe(result => {
+      this.instances = result;
+    }, error => console.error(error))
+    window.location.reload();
   }
 
 }

@@ -1,4 +1,5 @@
 ﻿using Amazon.S3;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -31,12 +32,28 @@ namespace TestApp.Controllers
             var response = await _service.TerminateInstanceAsync(instanceId);
             return Ok(response);
         }
-
-
+     
         [HttpGet]
+        [Route("/instances")]
         public async Task<IActionResult> GetAllInstances()
         {
             var response = await _service.GetAllInstancesAsync();
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [Route("/instances/start/{id}")]
+        public async Task<IActionResult> StartInstance(string id)
+        {
+            var response = await _service.StartInstanceAsync(id);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [Route("/instances/stop/{id}")]
+        public async Task<IActionResult> StopInstance(string id)
+        {
+            var response = await _service.StopInstanceAsync(id);
             return Ok(response);
         }
     }

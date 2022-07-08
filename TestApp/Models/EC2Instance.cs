@@ -12,5 +12,7 @@ namespace TestApp.Models
         public string Name { get; set; }
 
         public string State { get; set; }
+
+        public string InstanceType { get; set; }
     }
 }
