@@ -1,4 +1,7 @@
-﻿using Amazon.EC2.Model;
+﻿using Amazon.CloudFormation;
+using Amazon.CloudFormation.Model;
+using Amazon.EC2.Model;
+using Amazon.S3.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +10,9 @@ using TestApp.Models;
 
 namespace TestApp.Services
 {
-    public interface IEC2Service
+    public interface IVMService
     {
-        Task<EC2Response> CreateInstanceAsync(string amiID);
+        Task<EC2Response> CreateVMAsync(string amiID);
         Task<EC2Response> TerminateInstanceAsync(string instanceId);
 
         Task<List<EC2Instance>> GetAllInstancesAsync();
@@ -17,5 +20,11 @@ namespace TestApp.Services
         Task<InstanceState> StartInstanceAsync(string instanceId);
 
         Task<InstanceState> StopInstanceAsync(string instanceId);
+
+        Task<List<StackResource>> ListResources();
+
+        Task<CreateStackResponse> CreateStackAsync();
+
+        Task<List<Template>> ListingObjectsAsync();
     }
 }

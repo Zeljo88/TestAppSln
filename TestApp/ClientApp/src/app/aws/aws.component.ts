@@ -1,8 +1,11 @@
 import { Component, Inject } from '@angular/core';
-import { Ec2instanceService } from '../services/ec2instance.service';
+import { VMService } from '../services/vm.service';
 import { HttpClient } from '@angular/common/http';
 import { Ec2instance } from '../models/ec2instance';
 import { ErrorService } from '../services/error.service';
+
+
+
 
 export interface PeriodicElement {
   name: string;
@@ -29,7 +32,7 @@ selector: 'aws-component',
 templateUrl: './aws.component.html',
 styleUrls: ['./aws.component.css'],
 providers: [
-  Ec2instanceService,
+  VMService,
   ErrorService
 ]
 })
@@ -39,11 +42,11 @@ export class AwsComponent {
   public instances: Ec2instance[];
   constructor(
     http: HttpClient,
-    public ec2Service : Ec2instanceService,
+    public vmService : VMService,
     @Inject('BASE_URL')
     baseUrl: string
     ) {
-    http.get<Ec2instance[]>('https://localhost:44334/instances').subscribe(result => {
+      this.vmService.getAllVMs().subscribe(result => {
       this.instances = result;
     }, error => console.error(error));
   }
@@ -78,18 +81,27 @@ export class AwsComponent {
 
   }
 
-  public confirmStartVM(id: string) {
-    this.ec2Service.StartInstance(id).subscribe(result => {
+  public CreateWindowsAD() {
+    this.vmService.CreateWindowsAD().subscribe(result => {
       this.instances = result;
     }, error => console.error(error))
     window.location.reload();
+
   }
 
-  public confirmStopVM(id: string) {
-    this.ec2Service.StopInstance(id).subscribe(result => {
-      this.instances = result;
-    }, error => console.error(error))
-    window.location.reload();
-  }
+  //public confirmStartVM(id: string) {
+  //  this.vmService.StartInstance(id).subscribe(result => {
+  //    this.instances = result;
+  //  }, error => console.error(error))
+  //  window.location.reload();
+  //}
+
+  //public confirmStopVM(id: string) {
+  //  this.vmService.StopInstance(id).subscribe(result => {
+  //    this.instances = result;
+  //  }, error => console.error(error))
+  //  window.location.reload();
+  //}
 
 }
+export class VmTemplateDialog {}

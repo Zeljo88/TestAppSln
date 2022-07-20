@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "rSkvHOkmr9hGTL0AP20+x3YUcNUqmINP/C50bwsHTpOIjSpYXrFvKFqmk2uTBzXvt0XPW8tybfh2JXC4Uz39Sg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zeljko.antic\\source\\repos\\TestAppSln\\TestApp.Heaven\\TestApp.Heaven.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\awssdk.cloudformation\\3.7.11.1\\awssdk.cloudformation.3.7.11.1.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\awssdk.core\\3.7.12.6\\awssdk.core.3.7.12.6.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\awssdk.ec2\\3.7.76.1\\awssdk.ec2.3.7.76.1.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.2\\awssdk.extensions.netcore.setup.3.7.2.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\awssdk.s3\\3.7.9.20\\awssdk.s3.3.7.9.20.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
+    "C:\\Users\\zeljko.antic\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

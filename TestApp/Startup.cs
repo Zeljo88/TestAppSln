@@ -1,3 +1,4 @@
+using Amazon.CloudFormation;
 using Amazon.EC2;
 using Amazon.S3;
 using Microsoft.AspNetCore.Builder;
@@ -28,12 +29,12 @@ namespace TestApp
             services.AddControllersWithViews();
             services.AddAWSService<IAmazonS3>();
          
-            services.AddSingleton<IEC2Service, EC2Service>();
-            services.AddSingleton<IEC2Service, EC2Service>();
+            services.AddSingleton<IVMService, VMService>();
+            services.AddSingleton<IVMService, VMService>();
 
 
             services.AddAWSService<IAmazonEC2>();
-
+            services.AddAWSService<IAmazonCloudFormation>();
 
             services.AddCors();
 

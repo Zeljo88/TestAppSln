@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -9,13 +9,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-
-
 import { AwsComponent } from './aws/aws.component';
+import { VMService } from './services/ec2instance.service';
 
-
-
-import { Ec2instanceService } from './services/ec2instance.service';
 
 @NgModule({
 
@@ -32,6 +28,7 @@ import { Ec2instanceService } from './services/ec2instance.service';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -43,12 +40,12 @@ import { Ec2instanceService } from './services/ec2instance.service';
 
 providers: [
    { provide: 'BASE_URL', useFactory: getBaseUrl },
-   Ec2instanceService,
+   VMService,
     ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,AwsComponent]
 })
 export class AppModule { }
 
 export function getBaseUrl() {
-  return document.getElementsByTagName('base')[0].href;
+  return 'https://localhost:44334/api/';
 }

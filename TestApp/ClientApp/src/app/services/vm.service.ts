@@ -7,23 +7,30 @@ import { ErrorService } from './error.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class Ec2instanceService {
+export class VMService {
 
   constructor(public http: HttpClient, public errorService: ErrorService, @Inject('BASE_URL') private baseUrl: string) {
   }
 
-  public getAllEC2Instances() {
+  public getAllVMs() {
     return this.http.get<Ec2instance[]>(this.baseUrl + 'aws/instances').pipe(
       catchError(this.errorService.handleError));
   }
-
+/*
   public StartInstance(id) {
-    return this.http.put<any>('https://localhost:44334/instances/start/' + id, null).pipe(
+    return this.http.put<any>(this.baseUrl + 'aws/vm/start/' + id, null).pipe(
       catchError(this.errorService.handleError));
   }
 
   public StopInstance(id) {
-    return this.http.put<any>('https://localhost:44334/instances/stop/' + id, null).pipe(
+    return this.http.put<any>(this.baseUrl + '/aws/vm/stop/' + id, null).pipe(
+      catchError(this.errorService.handleError));
+  }*/
+
+  public CreateWindowsAD() {
+    return this.http.post<any>(this.baseUrl + '/stack', null).pipe(
       catchError(this.errorService.handleError));
   }
+
+
 }

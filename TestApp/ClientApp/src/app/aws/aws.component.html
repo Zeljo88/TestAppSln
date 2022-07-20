@@ -6,9 +6,15 @@ We can also create, start and stop EC2's </p>
 
 <button class="btn btn-primary" (click)="CreateInstance()">Create Instance</button>
 
+<button class="btn btn-primary" (click)="CreateWindowsAD()">Create Windows AD</button>
+
 <p *ngIf="!instances"><em>Loading...</em></p>
 
 <br><br>
+
+
+
+
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="instances">
   <thead>
     <tr>
