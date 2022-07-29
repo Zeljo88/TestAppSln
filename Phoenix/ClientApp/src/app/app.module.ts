@@ -6,14 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { CreatevmDialogComponent, HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AwsComponent } from './aws/aws.component';
 import { VMService } from './services/vm.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialExampleModule} from '../app/material.module';
-
+import {CreatevmDialogComponent} from '../app/home/createvm-dialog.component';
 
 @NgModule({
 
@@ -25,8 +25,7 @@ import {MaterialExampleModule} from '../app/material.module';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CreatevmDialogComponent,
-      CreatevmDialogComponent
+    CreatevmDialogComponent
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,7 +47,8 @@ providers: [
    { provide: 'BASE_URL', useFactory: getBaseUrl },
    VMService,
     ],
-  bootstrap: [AppComponent,AwsComponent]
+  bootstrap: [AppComponent,AwsComponent],
+  entryComponents: [CreatevmDialogComponent]
 })
 export class AppModule { }
 

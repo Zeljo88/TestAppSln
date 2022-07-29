@@ -9,7 +9,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
-
+import {CreatevmDialogComponent} from './createvm-dialog.component';
 
 @
 Component({
@@ -62,7 +62,21 @@ export class HomeComponent {
 
   selectedTemplate = 'option2';
 
- 
+
+  public CreateVM() {
+    this.dialog.open(CreatevmDialogComponent);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CreatevmDialogComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
   public CreateWindowsAD() {
     this.vmService.CreateWindowsAD().subscribe(result => {
       this.instances = result;
