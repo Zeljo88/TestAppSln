@@ -1,0 +1,194 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TestApp.Heaven/1.0.0": {
+        "dependencies": {
+          "AWSSDK.CloudFormation": "3.7.11.1",
+          "AWSSDK.Core": "3.7.12.6",
+          "AWSSDK.EC2": "3.7.76.1",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.2",
+          "AWSSDK.S3": "3.7.9.20"
+        },
+        "runtime": {
+          "TestApp.Heaven.dll": {}
+        }
+      },
+      "AWSSDK.CloudFormation/3.7.11.1": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.12.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.CloudFormation.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.11.1"
+          }
+        }
+      },
+      "AWSSDK.Core/3.7.12.6": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.12.6"
+          }
+        }
+      },
+      "AWSSDK.EC2/3.7.76.1": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.12.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.EC2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.76.1"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.7.2": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.12.6",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.1.0"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.9.20": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.12.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.9.20"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.17205"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.17205"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.17205"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/2.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.17205"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {}
+    }
+  },
+  "libraries": {
+    "TestApp.Heaven/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.CloudFormation/3.7.11.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ltj9B/4uJj7tt2D9EGn63ZZWRMsdRVMfhcbmA6kMWnFbC0yHa6qmC+/qUY0OL6f9xTuRTSKT3/y9Y2T9LuPazg==",
+      "path": "awssdk.cloudformation/3.7.11.1",
+      "hashPath": "awssdk.cloudformation.3.7.11.1.nupkg.sha512"
+    },
+    "AWSSDK.Core/3.7.12.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uwXtdOQoLtWGo59Eg9SI1BclXg+42gk1gTizz2QOlOgBvsfNuXejyIvzolrfcQxU2bQOgH81sB9PvPaDz3EcuA==",
+      "path": "awssdk.core/3.7.12.6",
+      "hashPath": "awssdk.core.3.7.12.6.nupkg.sha512"
+    },
+    "AWSSDK.EC2/3.7.76.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c8uZA8GMShjExox/1dnbymf8COxfVBev6kJ0wv+VCghROrgjhioJylIavBxuDYzIR5VZ8EtMGurW4f7tSznTEg==",
+      "path": "awssdk.ec2/3.7.76.1",
+      "hashPath": "awssdk.ec2.3.7.76.1.nupkg.sha512"
+    },
+    "AWSSDK.Extensions.NETCore.Setup/3.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iFjbEnVB0f6Hr8L3EfdelHG7zxVQrOmeP9UIrX3IODR1eTsrqVrmq0mazdIr0GZK1YG2/DZiVt6tNyV1bayndw==",
+      "path": "awssdk.extensions.netcore.setup/3.7.2",
+      "hashPath": "awssdk.extensions.netcore.setup.3.7.2.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.9.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z/lxT4Z+SS1RGSYbhsA5uwakuo5gTTR73ZPjcJFRDwxb5bQzqX52FX864nyqVAgAiR0pxosbafQJCn1wRTuA6w==",
+      "path": "awssdk.s3/3.7.9.20",
+      "hashPath": "awssdk.s3.3.7.9.20.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHFrXqMIvQNq51H8RYTO4IWmDOYh8NUzyqGlh0xHWTP6XYnKk7Ryinys2uDs+Vu88b3AMlM3gBBSs78m6OQpYQ==",
+      "path": "microsoft.extensions.configuration.abstractions/2.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eUdJ0Q/GfVyUJc0Jal5L1QZLceL78pvEM9wEKcHeI24KorqMDoVX+gWsMGLulQMfOwsUaPtkpQM2pFERTzSfSg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6ZCllUYGFukkymSTx3Yr0G/ajRxoNJp7/FqSxSB4fGISST54ifBhgu4Nc0ItGi3i6DqwuNd8SUyObmiC++AO2Q==",
+      "path": "microsoft.extensions.logging.abstractions/2.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ukg53qNlqTrK38WA30b5qhw0GD7y3jdI9PHHASjdKyTcBHTevFM2o23tyk3pWCgAV27Bbkm+CPQ2zUe1ZOuYSA==",
+      "path": "microsoft.extensions.primitives/2.0.0",
+      "hashPath": "microsoft.extensions.primitives.2.0.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "path": "system.runtime.compilerservices.unsafe/4.4.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+    }
+  }
+}

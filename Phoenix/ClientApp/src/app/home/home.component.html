@@ -1,0 +1,68 @@
+<p>This app is for Demo purposes. <br>It shows all existing VM's from AWS and Azure.<br>
+User can also create, start and stop VM's </p>
+
+
+<button class="btn btn-primary" (click)="openDialog()">Create VM</button>
+
+<!--
+<button class="btn btn-primary" (click)="CreateWindowsAD()">Create Windows AD</button>
+-->
+<p *ngIf="!instances"><em>Loading...</em></p>
+
+<br><br>
+<!--
+<mat-form-field appearance="fill">
+  <mat-label>Select an option</mat-label>
+  <mat-select [(value)]="selectedTemplate">
+    <mat-option *ngFor="let lC of templates"
+    [value]="lC.id">
+          {{lC.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+-->
+<h1 id="tableLabel">List of VM's</h1>
+
+
+<table class='table table-striped mat-elevation-z8'  aria-labelledby="tableLabel" *ngIf="instances">
+  <thead>
+    <tr>
+      <th style="width: 200px;">Cloud</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>IP address</th>
+      <th>State</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let instance of instances">
+      <td>{{ instance.cloud }}</td>
+      <td>{{ instance.name }}</td>
+      <td>{{ instance.instanceType }}</td>
+      <td>{{ instance.ipAddress }}</td>
+      <td [ngStyle]="{'color': (instance.state === 'running') ? 'green' : (instance.state === 'stopped') ? 'red' : (instance.state === 'pending') ? 'yellow' : ''}">{{ instance.state }}</td>
+
+        <td><button class="btn btn-primary" *ngIf="instance.state === 'stopped'" (click)="confirmStartVM(instance.instanceId)" class="startButton">
+     Start</button>
+      <button class="btn btn-primary" *ngIf="instance.state === 'running'" (click)="confirmStopVM(instance.instanceId)" class="stopButton">
+      Stop</button></td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<form [formGroup]="profileForm">
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName" required>
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
